@@ -13,7 +13,7 @@ class PapersController < ApplicationController
     if @paper.save
       redirect_to submitted_papers_path
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
   end
 
