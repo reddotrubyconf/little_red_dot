@@ -30,7 +30,7 @@
   <h1 class="text-white text-4xl font-bold">Call For Papers</h1>
 </div>
 
-<div class="mt-12 pt-12 pb-12 mb-24 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 bg-white rounded-lg border-4 border-rose-800 text-black">
+<div class="mt-12 pt-12 pb-8 mb-24 mx-8 md:mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 bg-white rounded-lg border-4 border-rose-800 text-black">
   <% unless user_signed_in? %>
     <div class="flex justify-center">
       <%= button_to user_github_omniauth_authorize_path, data: { turbo: false }, method: :post do %>
