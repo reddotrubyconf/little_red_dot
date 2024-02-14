@@ -1,0 +1,39 @@
+<nav class="fixed top-0 bg-white border-gray-200 border-b-4 w-full">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-20 items-center justify-between">
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex flex-shrink-0 items-center">
+          <%= link_to root_path do %>
+            <div class="flex justify-center items-center">
+              <%= image_tag "dally.png", class: "h-12 pr-4 w-auto" %>
+              &nbsp; <h1 class="text-rose-800 font-bold text-xl">RDRC 2024</h1>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <div class="relative ml-3">
+          <%= link_to me_path do %>
+            <img class="h-12 w-12 rounded-full border-2 border-rose-800" src="<%= current_user&.github_display_picture_url %>" alt="">
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="rounded-lg border bg-white shadow-sm w-full max-w-md mx-auto mt-24 pb-12 pt-8">
+  <div class="space-y-1.5 p-6 flex flex-col items-center">
+    <img class="h-24 w-24 rounded-full border-2 border-rose-800 mb-4" src="<%= current_user&.github_display_picture_url %>" alt="">
+    <div class="text-lg font-bold mt-4"><%= current_user.username %></div>
+    <p class="text-sm text-gray-500 dark:text-gray-400"><%= current_user.email %></p>
+  </div>
+  <div class="flex justify-center mt-4">
+    <%= button_to users_sign_out_path, data: { turbo: false }, method: :delete do %>
+      <div class='button mb-8 px-8 h-12 bg-slate-500 rounded-lg cursor-pointer select-none active:translate-y-2  active:[box-shadow:0_0px_0_0_#000000,0_0px_0_0_#000000] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#000000,0_15px_0_0_#1b70f841]'>
+                     <span class='flex justify-center items-center h-full text-white font-bold text-lg'>
+                       <i class="fa-brands fa-github mr-4"></i>Sign Out</span>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<%= simple_form_for paper do |f|  %>
+  <h3 class="text-rose-800 text-2xl font-bold mb-8">The Paper</h3>
+
+  <div>
+    <%= f.input :title, label: "Paper Title", input_html: { class: "mt-2 block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
+  </div>
+
+  <div class="mt-4">
+    <%= f.input :description, label: "Paper Description", input_html: { class: "mt-2 block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
+  </div>
+
+  <div class="mt-4">
+    <%= f.input :notes, label: "Note to the Organisers", input_html: { class: "mt-2 block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
+  </div>
+
+  <div class="mt-4">
+    <%= f.input :audience_level, :collection => Paper::AUDIENCE_LEVELS, selected: Paper::AUDIENCE_LEVELS.first, input_html: { class: "mt-2 block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
+  </div>
+
+  <hr class="my-8">
+
+  <h3 class="text-rose-800 text-2xl font-bold mb-8">The Speaker</h3>
+
+  <%= f.simple_fields_for :speaker_profile do |p| %>
+    <%= p.input :name, input_html: { class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
+    <%= p.input :affiliation, input_html: { class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
+    <%= p.input :url, label: "Personal Site URL", required: false, input_html: { class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
+    <%= p.input :x_handle, label: "Twitter/X Handle", required: false, input_html: { class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
+    <%= p.input :bio, as: :text, input_html: { class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
+  <% end %>
+
+  <div class="flex justify-center mt-8">
+    <%= f.submit "Submit Paper", class: "mt-4 button mb-4 px-8 h-12 bg-rose-500 rounded-lg cursor-pointer select-none text-white
+                active:translate-y-2  active:[box-shadow:0_0px_0_0_#be123c,0_0px_0_0_#1b70f841]
+                active:border-b-[0px]
+                transition-all duration-150 [box-shadow:0_10px_0_0_#be123c,0_15px_0_0_#1b70f841]" %>
+  </div>
+<% end %>

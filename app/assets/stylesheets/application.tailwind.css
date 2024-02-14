@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-200;
+  }
+}
+
+*/
+
+body {
+  background: #effffb;
+}
+
+.gem-banner {
+  height: 20vh;
+  width: 100%;
+  background: rgb(159, 18, 57);
+  background-image: url(skyline.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}

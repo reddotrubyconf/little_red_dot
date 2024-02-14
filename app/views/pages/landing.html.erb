@@ -1,0 +1,255 @@
+<div class="fixed top-0 w-screen bg-teal-100 h-12 z-50 bg-teal-100 border-b-4 border-b-teal-800 flex justify-center items-center text-xs md:text-sm">
+  <span>CFPs open till 31 May</span>
+  <%= link_to "Submit your papers", new_paper_path, class: "ml-4 text-teal-800 font-bold decoration-dotted underline underline-offset-8" %>
+</div>
+
+<div class="container mx-auto mb-32 px-8 lg:px-0">
+  <div class="flex flex-wrap mt-24 mb-12 lg:mb-0">
+    <div class="lg:h-screen w-full lg:w-6/12 lg:order-1 order-2">
+      <div class="lg:pt-20">
+        <h1 class="text-4xl lg:text-7xl font-bold text-rose-500">Red Dot Ruby Conference 2024</h1>
+        <p class="text-black text-lg lg:text-xl mb-2 mt-4 font-bold">🇸🇬 Singapore (Date TBC)</p>
+      </div>
+      <%= image_tag "wavy.png", class: "max-sm:hidden w-48 mb-12" %>
+      <div class="mt-12">
+        <div class="rounded-lg border bg-white shadow-sm w-full max-w-sm p-0">
+          <div class="flex flex-col space-y-1.5 p-6 border-b">
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff" stroke="rgb(190 24 93)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+              </svg>
+              <div class="grid gap-1.5">
+                <h3 class="font-semibold whitespace-nowrap tracking-tight text-sm">
+                  Notify Me When Ticket Sales Begin
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 grid gap-4">
+            <%= render 'subscribers/form', subscriber: @subscriber %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full lg:w-6/12 lg:order-2 order-1">
+      <%= image_tag "dally.png", class: "h-48 pb-8 lg:pb-0 lg:h-3/4" %>
+    </div>
+  </div>
+  <div class="relative flex flex-wrap rounded-lg bg-white [box-shadow:0_40px_0_0_#c3e5e2,0_15px_0_0_#c3e5e2] border-4 border-teal-800">
+    <div class="spinning-ruby max-sm:hidden absolute -right-10 -top-10">
+      <svg viewBox="-1 -1 50 50" width="100px">
+        <path d="M 35,40 30,48 21,42 11,44 9,34 0,30 6,20 4,10 14,8 20,0 28,5 38,3 l 1,10 8,5 -5,8 2,10z" stroke="rgb(190 24 93)" stroke-linejoin="bevel" fill="rgb(190 24 93)" />
+      </svg>
+    </div>
+
+    <div class="max-sm:hidden absolute -right-3 -top-3">
+      <i class="text-5xl fa-solid fa-gem text-white"></i>
+    </div>
+
+    <div class="lg:w-1/2 w-full bg-white overflow-hidden">
+      <%= image_tag "ruby_conf_prev.jpeg" %>
+    </div>
+    <div class="lg:w-1/2 w-full px-8 pt-8 lg:pt-12">
+      <h1 class="text-2xl lg:text-4xl font-bold text-rose-600">We are so back.</h1>
+      <p class="text-xl lg:text-2xl mb-8">
+        We've missed you as much as you've missed us.
+      </p>
+      <p class="text-sm lg:text-md text-slate-500 my-4"><strong>RedDotRubyConf (RDRC)</strong>, the annual Ruby conference in Singapore, was previously put on hiatus during the COVID pandemic for health and safety reasons.</p>
+      <p class="text-sm lg:text-md text-slate-500 my-4">
+        Well, we're excited to announce that we're back for a much awaited RDRC reboot in 2024, and we're ready to bring the Ruby community together again!
+      </p>
+      <p class="text-sm lg:text-md text-slate-500 my-4">Join us here in sunny Singapore (date TBC) for a <i>gem</i>-packed, two-day single-track conference celebrating the programming language we all know and love.</p>
+      <p class="text-sm lg:text-md text-slate-500 mt-4 mb-8">
+        We look forward to seeing you all soon, fellow Rubyists!
+      </p>
+    </div>
+  </div>
+</div>
+<div class="pt-18 bg-rose-100 pb-4 relative">
+  <div class="sm:hidden absolute -top-10 w-screen flex justify-center">
+    <svg class="spinning-ruby" viewBox="-1 -1 50 50" width="100px">
+      <path d="M 35,40 30,48 21,42 11,44 9,34 0,30 6,20 4,10 14,8 20,0 28,5 38,3 l 1,10 8,5 -5,8 2,10z" stroke="rgb(190 24 93)" stroke-linejoin="bevel" fill="rgb(190 24 93)" />
+    </svg>
+  </div>
+
+  <div class="sm:hidden absolute -top-2 w-screen flex justify-center">
+    <i class="text-5xl fa-solid fa-gem text-white"></i>
+  </div>
+
+  <div class="container mx-auto pt-20 mb-24 px-8 lg:px-0">
+    <h1 class="font-bold text-xl lg:text-5xl text-rose-800 text-center">
+      2 days. 1 track. 20 speakers.
+    </h1>
+    <div class="relative mt-12 mx-auto w-7xl rounded-lg bg-white [box-shadow:0_40px_0_0_#CC7996,0_15px_0_0_#CC7996] border-4 border-rose-800">
+      <div class="pt-8 text-center text-xl font-bold">
+        Full agenda to be announced soon.
+      </div>
+
+      <div class="h-32 pt-8 flex justify-center">
+        <%= link_to new_paper_path do %>
+          <button
+            class="button mb-8 px-8 h-12 bg-rose-500 rounded-lg cursor-pointer select-none active:translate-y-2 active:[box-shadow:0_0px_0_0_#be123c,0_0px_0_0_#1b70f841] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#be123c,0_15px_0_0_#1b70f841]"
+          >
+            <span class="flex justify-center items-center h-full text-white font-bold text-lg"> <i class="fa-solid fa-person-chalkboard pr-2"></i>Call For Papers</span>
+          </button>
+        <% end %>
+      </div>
+    </div>
+    <!--      <div class="max-md:hidden flex">-->
+    <!--         <div class="mt-24 transform -rotate-90 h-4 text-lg font-bold text-rose-800">-->
+    <!--            DAY ONE-->
+    <!--         </div>-->
+    <!--         <div class="mt-12 flex grow-->
+    <!--            rounded-lg bg-white border-4 border-rose-800">-->
+    <!--            <div class="w-full flex flex-col">-->
+    <!--               <div class="-m-1.5 overflow-x-auto">-->
+    <!--                  <div class="p-1.5 min-w-full inline-block align-middle">-->
+    <!--                     <div class="rounded-lg overflow-hidden">-->
+    <!--                        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">-->
+    <!--                           <thead>-->
+    <!--                              <tr>-->
+    <!--                                 <th scope="col" class="px-6 py-3 text-start text-lg font-medium text-rose-500">Time</th>-->
+    <!--                                 <th scope="col" class="px-6 py-3 text-start text-lg font-medium text-rose-500">Topic</th>-->
+    <!--                                 <th scope="col" class="px-6 py-3 text-start text-lg font-medium text-rose-500">Speaker</th>-->
+    <!--                                 <th scope="col" class="px-6 py-3 text-end text-lg font-medium text-rose-500"></th>-->
+    <!--                              </tr>-->
+    <!--                           </thead>-->
+    <!--                           <tbody class="divide-y divide-gray-200 dark:divide-gray-700">-->
+    <!--                              <tr>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">John Brown</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">45</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">New York No. 1 Lake Park</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">-->
+    <!--                                    <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">View Proposal</button>-->
+    <!--                                 </td>-->
+    <!--                              </tr>-->
+    <!--                              <tr>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Jim Green</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">27</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">London No. 1 Lake Park</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">-->
+    <!--                                    <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">View Proposal</button>-->
+    <!--                                 </td>-->
+    <!--                              </tr>-->
+    <!--                              <tr>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Joe Black</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">31</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">Sidney No. 1 Lake Park</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">-->
+    <!--                                    <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">View Proposal</button>-->
+    <!--                                 </td>-->
+    <!--                              </tr>-->
+    <!--                           </tbody>-->
+    <!--                        </table>-->
+    <!--                     </div>-->
+    <!--                  </div>-->
+    <!--               </div>-->
+    <!--            </div>-->
+    <!--         </div>-->
+    <!--      </div>-->
+    <!--      <div class="max-md:hidden flex">-->
+    <!--         <div class="mt-24 transform -rotate-90 h-4 text-lg font-bold text-rose-800">-->
+    <!--         DAY TWO-->
+    <!--         </div>-->
+    <!--         <div class="mt-12 flex grow-->
+    <!--            rounded-lg bg-white border-4 border-rose-800">-->
+    <!--            <div class="w-full flex flex-col">-->
+    <!--               <div class="-m-1.5 overflow-x-auto">-->
+    <!--                  <div class="p-1.5 min-w-full inline-block align-middle">-->
+    <!--                     <div class="rounded-lg overflow-hidden">-->
+    <!--                        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">-->
+    <!--                           <thead>-->
+    <!--                              <tr>-->
+    <!--                                 <th scope="col" class="px-6 py-3 text-start text-lg font-medium text-rose-500">Time</th>-->
+    <!--                                 <th scope="col" class="px-6 py-3 text-start text-lg font-medium text-rose-500">Topic</th>-->
+    <!--                                 <th scope="col" class="px-6 py-3 text-start text-lg font-medium text-rose-500">Speaker</th>-->
+    <!--                                 <th scope="col" class="px-6 py-3 text-end text-lg font-medium text-rose-500"></th>-->
+    <!--                              </tr>-->
+    <!--                           </thead>-->
+    <!--                           <tbody class="divide-y divide-gray-200 dark:divide-gray-700">-->
+    <!--                              <tr>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">John Brown</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">45</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">New York No. 1 Lake Park</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">-->
+    <!--                                    <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">View Proposal</button>-->
+    <!--                                 </td>-->
+    <!--                              </tr>-->
+    <!--                              <tr>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Jim Green</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">27</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">London No. 1 Lake Park</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">-->
+    <!--                                    <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">View Proposal</button>-->
+    <!--                                 </td>-->
+    <!--                              </tr>-->
+    <!--                              <tr>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Joe Black</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">31</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">Sidney No. 1 Lake Park</td>-->
+    <!--                                 <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">-->
+    <!--                                    <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">View Proposal</button>-->
+    <!--                                 </td>-->
+    <!--                              </tr>-->
+    <!--                           </tbody>-->
+    <!--                        </table>-->
+    <!--                     </div>-->
+    <!--                  </div>-->
+    <!--               </div>-->
+    <!--            </div>-->
+    <!--         </div>-->
+    <!--      </div>-->
+    <!--      <div class="text-center">-->
+    <!--         <div class="pt-12">-->
+    <!--             <button class='button mb-8 px-8 h-12 bg-rose-500 rounded-lg cursor-pointer select-none-->
+    <!--                active:translate-y-2  active:[box-shadow:0_0px_0_0_#be123c,0_0px_0_0_#1b70f841]-->
+    <!--                active:border-b-[0px]-->
+    <!--                transition-all duration-150 [box-shadow:0_10px_0_0_#be123c,0_15px_0_0_#1b70f841]-->
+    <!--                '>-->
+    <!--               <span class='flex justify-center items-center h-full text-white font-bold text-lg'>-->
+    <!--               <i class="fa-solid fa-person-chalkboard pr-2"></i>Call For Proposals</span>-->
+    <!--            </button>-->
+    <!--         </div>-->
+    <!--      </div>-->
+  </div>
+</div>
+<div class="pb-24 relative bg-indigo-100 text-center">
+  <div class="container mx-auto pt-20 mb-24 px-8 lg:px-0">
+    <h1 class="text-xl lg:text-5xl font-bold text-indigo-800">Our Benevolent Sponsors</h1>
+
+    <div class="relative mt-12 mx-auto w-7xl rounded-lg bg-white [box-shadow:0_40px_0_0_#a5b4fc,0_15px_0_0_#a5b4fc] border-4 border-indigo-800">
+      <div class="pt-8 text-center text-xl font-bold">
+        Want to see your logo here?
+      </div>
+
+      <div class="h-32 pt-8">
+        <a href="mailto:rdrc-organisers@googlegroup.com">
+          <button
+            class="button mb-8 px-8 h-12 bg-indigo-600 rounded-lg cursor-pointer select-none active:translate-y-2 active:[box-shadow:0_0px_0_0_#3730a3,0_0px_0_0_#1b70f841] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#3730a3,0_15px_0_0_#1b70f841]"
+          >
+            <span class="flex justify-center items-center h-full text-white font-bold text-lg"> <i class="fa fa-heart text-white pr-2" aria-hidden="true"></i>Become A Sponsor</span>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="min-h-12 bg-white py-8">
+  <div class="container mx-auto text-center md:text-right">Organised with <i class="text-xl fa-solid fa-gem text-rose-600"></i> by RubySG</div>
+</div>
+
+<script>
+    window.onscroll = function () {
+        scrollRotate();
+    };
+
+    function scrollRotate() {
+        let rubies = document.querySelectorAll(".spinning-ruby");
+
+        rubies.forEach((ruby) => {
+            ruby.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
+        });
+    }
+</script>
