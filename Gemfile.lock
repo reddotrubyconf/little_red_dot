@@ -136,6 +136,9 @@ GEM
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
+    madmin (1.2.8)
+      pagy (>= 3.5)
+      rails (>= 6.0.3)
     mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
@@ -194,6 +197,7 @@ GEM
       actionpack (>= 4.2)
       omniauth (~> 2.0)
     orm_adapter (0.5.0)
+    pagy (7.0.0)
     psych (5.1.2)
       stringio
     public_suffix (5.0.4)
@@ -320,6 +324,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   litestack (~> 0.4.2)
+  madmin (~> 1.2)
   omniauth
   omniauth-github
   omniauth-rails_csrf_protection
