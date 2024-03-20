@@ -5,35 +5,16 @@
 
 <div class="container mx-auto mb-32 px-8 lg:px-0">
   <div class="flex flex-wrap mt-24 mb-12 lg:mb-0">
-    <div class="lg:h-screen w-full lg:w-6/12 lg:order-1 order-2">
-      <div class="lg:pt-20">
+    <div class="w-full lg:w-8/12">
+      <div class="lg:pt-20 mb-8">
+        <%= image_tag "dally.png", class: "h-48 mb-12 lg:pb-0 lg:h-48" %>
         <h1 class="text-4xl lg:text-7xl font-bold text-rose-500">Red Dot Ruby Conference 2024</h1>
         <p class="text-black text-lg lg:text-xl mb-2 mt-4 font-bold">🇸🇬 SingPost Centre, 25-26 July 2024</p>
       </div>
       <%= image_tag "wavy.png", class: "max-sm:hidden w-48 mb-12" %>
-      <div class="mt-12">
-        <div class="rounded-lg border bg-white shadow-sm w-full max-w-sm p-0">
-          <div class="flex flex-col space-y-1.5 p-6 border-b">
-            <div class="flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff" stroke="rgb(190 24 93)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
-                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
-                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
-              </svg>
-              <div class="grid gap-1.5">
-                <h3 class="font-semibold whitespace-nowrap tracking-tight text-sm">
-                  Notify Me When Ticket Sales Begin
-                </h3>
-              </div>
-            </div>
-          </div>
-          <div class="p-4 grid gap-4">
-            <%= render 'subscribers/form', subscriber: @subscriber %>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="w-full lg:w-6/12 lg:order-2 order-1">
-      <%= image_tag "dally.png", class: "h-48 pb-8 lg:pb-0 lg:h-3/4" %>
+    <div class="w-full lg:w-4/12">
+      <tito-widget event="cu/rdrc24"></tito-widget>
     </div>
   </div>
   <div class="relative flex flex-wrap rounded-lg bg-white [box-shadow:0_40px_0_0_#c3e5e2,0_15px_0_0_#c3e5e2] border-4 border-teal-800">
