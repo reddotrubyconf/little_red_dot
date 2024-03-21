@@ -1,7 +1,13 @@
 class PapersController < ApplicationController
+  before_action :validate_admin, only: [:index]
+
   def new
     @paper = Paper.new
     @paper.build_speaker_profile
+  end
+
+  def index
+    @papers = Paper.includes(:user, :speaker_profile).all
   end
 
   def create
@@ -9,6 +15,8 @@ class PapersController < ApplicationController
 
     @paper.user = current_user
     @paper.conference = current_conference
+
+    SendBotNotificationJob.perform_later("New paper submitted: #{@paper.title}")
 
     if @paper.save
       redirect_to submitted_papers_path

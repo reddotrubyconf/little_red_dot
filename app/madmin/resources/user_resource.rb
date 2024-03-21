@@ -6,6 +6,7 @@ class UserResource < Madmin::Resource
   attribute :source_id
   attribute :provider
   attribute :data
+  attribute :admin
   attribute :reset_password_token
   attribute :reset_password_sent_at
   attribute :remember_created_at

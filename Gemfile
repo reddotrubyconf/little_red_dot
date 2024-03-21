@@ -89,3 +89,4 @@ gem 'simple_form-tailwind'
 gem "litestack", "~> 0.4.2"
 
 gem "madmin", "~> 1.2"
+gem 'telegram-bot-ruby', '~> 1.0'
