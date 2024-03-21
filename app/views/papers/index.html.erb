@@ -30,27 +30,25 @@
 </div>
 
 <% @papers.each do |paper| %>
-  <div class="mt-12 pt-12 pb-8 mb-12 mx-8 md:mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 bg-white rounded-lg border-4 border-rose-800 text-black">
-    <div class="border-b-2 border-gray-200 py-4">
+  <div class="my-8 py-4 mx-8 md:mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 bg-white rounded-lg border-4 border-rose-800 text-black">
+    <div class="py-2">
       <div class="mb-8">
         <h3 class="text-rose-800 text-2xl font-bold"><%= paper.title %></h3>
-        <p class="text-gray-500 text-xl"><%= paper.description %></p>
-        <p class="text-gray-500 text-sm"><%= paper.notes %></p>
+        <p class="text-xl"><%= paper.description %></p>
+        <p class="text-sm"><%= paper.notes %></p>
       </div>
       <div class="mb-8">
-        <p class="text-gray-500 text-xs">Audience Level: <%= paper.audience_level %></p>
-        <p class="text-gray-500 text-xs">Submitted on: <%= paper.created_at.strftime("%d %b %Y") %></p>
+        <p class="text-xs">Audience Level: <%= paper.audience_level %></p>
+        <p class="text-xs">Submitted on: <%= paper.created_at.strftime("%d %b %Y") %></p>
       </div>
 
-      <hr>
-
-      <div class="mt-8">
-        <p class="text-gray-500 text-sm">Submitted by: <%= paper.speaker_profile.name %></p>
-        <p class="text-gray-500 text-sm">Email: <%= paper.user.email %></p>
-        <p class="text-gray-500 text-sm">Affiliation: <%= paper.speaker_profile.affiliation %></p>
-        <p class="text-gray-500 text-sm">Speaker Url: <%= paper.speaker_profile.url %></p>
-        <p class="text-gray-500 text-sm">X: <%= paper.speaker_profile.x_handle %></p>
-        <p class="text-gray-500 text-sm">Bio: <%= paper.speaker_profile.bio %></p>
+      <div class="my-4 bg-rose-200 text-rose-800 rounded-lg p-4">
+        <p class="text-sm">Submitted by: <%= paper.speaker_profile.name %></p>
+        <p class="text-sm">Email: <%= paper.user.email %></p>
+        <p class="text-sm">Affiliation: <%= paper.speaker_profile.affiliation %></p>
+        <p class="text-sm">Speaker Url: <%= paper.speaker_profile.url %></p>
+        <p class="text-sm">X: <%= paper.speaker_profile.x_handle %></p>
+        <p class="text-sm">Bio: <%= paper.speaker_profile.bio %></p>
       </div>
     </div>
   </div>
