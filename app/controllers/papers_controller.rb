@@ -7,7 +7,7 @@ class PapersController < ApplicationController
   end
 
   def index
-    @papers = Paper.includes(:user, :speaker_profile).all
+    @papers = Paper.includes(:user, :speaker_profile).all.order(created_at: :desc)
   end
 
   def create
