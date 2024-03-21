@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   draw :madmin
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   devise_scope :user do
+    get '/users/sign_in', to: 'pages#login'
     delete '/users/sign_out' => 'devise/sessions#destroy'
   end
 
@@ -10,12 +11,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#landing"
   get '/me', to: 'pages#me'
-
-  resources :auth do
-    collection do
-      get :github
-    end
-  end
 
   resources :papers do
     collection do

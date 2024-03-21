@@ -3,5 +3,7 @@ class PagesController < ApplicationController
     @subscriber = Subscriber.new
   end
 
+  def login; end
+
   def me; end
 end

@@ -15,16 +15,9 @@
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
         <div class="relative ml-3">
           <% if user_signed_in? %>
-            <div class="flex items-center gap-4">
-              <%= link_to papers_path do %>
-                <span class="underline underline-offset-8 decoration-dotted text-rose-800 font-bold text-lg">
-                  Submitted Papers
-                </span>
-              <% end if current_user.admin? %>
-              <%= link_to me_path do %>
-                <img class="h-12 w-12 rounded-full border-2 border-rose-800" src="<%= current_user&.github_display_picture_url %>" alt="">
-              <% end %>
-            </div>
+            <%= link_to me_path do %>
+              <img class="h-12 w-12 rounded-full border-2 border-rose-800" src="<%= current_user&.github_display_picture_url %>" alt="">
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -47,7 +40,5 @@
                    </div>
       <% end %>
     </div>
-  <% else %>
-    <%= render "papers/form", paper: @paper %>
   <% end %>
 </div>
