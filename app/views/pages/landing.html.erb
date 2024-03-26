@@ -61,7 +61,7 @@
 
   <div class="container mx-auto pt-20 mb-24 px-8 lg:px-0">
     <h1 class="font-bold text-xl lg:text-5xl text-rose-800 text-center">
-      2 days. 1 track. 20 speakers.
+      2 days. 1 track. 16+ speakers.
     </h1>
     <div class="pt-8 text-center text-xl font-bold text-rose-400">
       Full agenda to be announced soon.
@@ -194,7 +194,7 @@
         Want to see your logo here?
       </div>
 
-      <div class="h-32 pt-8">
+      <div class="py-8 flex md:flex-row md:justify-center md:items-center flex-col">
         <a href="mailto:organisers@reddotrubyconf.com">
           <button
             class="button mb-8 px-8 h-12 bg-indigo-600 rounded-lg cursor-pointer select-none active:translate-y-2 active:[box-shadow:0_0px_0_0_#3730a3,0_0px_0_0_#1b70f841] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#3730a3,0_15px_0_0_#1b70f841]"
@@ -202,6 +202,9 @@
             <span class="flex justify-center items-center h-full text-white font-bold text-lg"> <i class="fa fa-heart text-white pr-2" aria-hidden="true"></i>Become A Sponsor</span>
           </button>
         </a>
+        <% if current_conference.sponsorship_prospectus.present? %>
+          <%= link_to "Sponsorship Prospectus",  current_conference.sponsorship_prospectus , class: "ml-4 text-indigo-800 font-bold decoration-dotted underline underline-offset-8" %>
+        <% end %>
       </div>
     </div>
   </div>
