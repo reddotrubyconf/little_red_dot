@@ -1,0 +1,21 @@
+<div class="mt-12 max-w-lg mx-auto">
+    <div class="my-4 text-right">
+        <%= link_to "New Speaker", new_featured_speaker_path, class: "ml-4 text-teal-800 font-bold decoration-dotted underline underline-offset-8" %>
+    </div>
+    <% @speakers.each do |s| %>
+        <div class="flex items-center mb-4">
+            <div class="flex-shrink-0">
+                <img class="h-12 w-12 rounded-full" src="<%= s.display_picture %>" alt="">
+            </div>
+            <div class="ml-4">
+                <div class="text-sm font-medium text-gray-900"><%= s.name %></div>
+                <div class="text-sm text-gray-500"><%= s.title %></div>
+
+                <%= button_to "Bump Up", bump_up_featured_speaker_path(s), method: :patch, class: "text-sm text-blue-500" %>
+                <%= button_to "Bump Down", bump_down_featured_speaker_path(s), method: :patch, class: "text-sm text-blue-500" %>
+
+                <%= link_to "Delete", s,  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-sm text-red-500" %>
+            </div>
+        </div>
+    <% end %>
+</div>

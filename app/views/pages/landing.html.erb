@@ -66,68 +66,7 @@
     <div class="pt-8 text-center text-xl font-bold text-rose-400">
       Full agenda to be announced soon.
     </div>
-    <div class="relative mt-12 mx-auto w-7xl rounded-lg bg-white [box-shadow:0_40px_0_0_#CC7996,0_15px_0_0_#CC7996] border-4 border-rose-800">
-      <div class="p-8">
-        <h3 class="text-center font-bold text-2xl text-rose-800">
-          Speaker List
-        </h3>
-        <div class="flex flex-wrap mt-8 md:flex-row flex-col">
-          <div class="mt-4 flex w-full md:w-1/3 md:flex-row flex-col items-center">
-            <img src="https://avatars.githubusercontent.com/u/3124?v=4" class="rounded-xl border-4 border-rose-400 h-24 w-24" />
-            <div class="pt-4 px-4 flex flex-col justify-end max-sm:items-center">
-              <h3 class="text-xl font-bold text-rose-800">
-                Aaron Patterson
-              </h3>
-              <p class="text-neutral-800">
-                Rails Core, Shopify
-              </p>
-              <p class="group pt-2">
-                <a href='https://github.com/tenderlove' target="_blank">
-                  <i class="text-xl fa-brands fa-github-alt text-rose-600 group-hover:animate-bounce"></i>
-                  <span class="text-sm underline decoration-dotted text-rose-600">tenderlove</span>
-                </a>
-              </p>
-            </div>
-          </div>
-          <div class="flex w-full md:w-1/3 md:flex-row flex-col items-center mt-8 md:mt-4">
-            <div class="rounded-xl border-4 border-rose-400 h-24 w-24 bg-rose-200 flex justify-center items-center">
-              <i class="text-4xl fa-solid fa-face-smile text-rose-400"></i>
-            </div>
-            <div class="pt-4 px-4 flex flex-col justify-end max-sm:items-center">
-              <div class="h-6 w-32 bg-rose-100 rounded-lg">
-              </div>
-              <div class="mt-2 h-6 w-48 bg-rose-100 rounded-lg">
-              </div>
-              <div class="mt-2 h-4 w-24 bg-rose-100 rounded-lg">
-              </div>
-            </div>
-          </div>
-          <div class="flex w-full md:w-1/3 md:flex-row flex-col items-center mt-8 md:mt-4">
-            <div class="rounded-xl border-4 border-rose-400 h-24 w-24 bg-rose-200 flex justify-center items-center">
-              <i class="text-4xl fa-solid fa-face-smile text-rose-400"></i>
-            </div>
-            <div class="pt-4 px-4 flex flex-col justify-end max-sm:items-center">
-              <div class="h-6 w-32 bg-rose-100 rounded-lg">
-              </div>
-              <div class="mt-2 h-6 w-48 bg-rose-100 rounded-lg">
-              </div>
-              <div class="mt-2 h-4 w-24 bg-rose-100 rounded-lg">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="h-32 pt-8 flex justify-center">
-        <%= link_to new_paper_path do %>
-          <button
-            class="animate-pulse button mb-8 px-8 h-12 bg-rose-500 rounded-lg cursor-pointer select-none active:translate-y-2 active:[box-shadow:0_0px_0_0_#be123c,0_0px_0_0_#1b70f841] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#be123c,0_15px_0_0_#1b70f841]"
-          >
-            <span class="flex justify-center items-center h-full text-white font-bold text-lg"> <i class="fa-solid fa-person-chalkboard pr-2"></i>Call For Papers</span>
-          </button>
-        <% end %>
-      </div>
-    </div>
+    <%= render "featured_speakers", speakers: @speakers %>
     <!--      <div class="max-md:hidden flex">-->
     <!--         <div class="mt-24 transform -rotate-90 h-4 text-lg font-bold text-rose-800">-->
     <!--            DAY ONE-->

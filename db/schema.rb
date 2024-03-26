@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_15_150826) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_26_160139) do
   create_table "conferences", id: :string, force: :cascade do |t|
     t.string "name", null: false
     t.string "address"
@@ -19,6 +19,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_15_150826) do
     t.json "agenda", default: {}
     t.boolean "active", default: false
     t.boolean "call_for_papers", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "featured_speakers", id: :string, force: :cascade do |t|
+    t.string "display_picture", null: false
+    t.string "name", null: false
+    t.string "title", null: false
+    t.integer "display_order"
+    t.string "github_handle"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -72,6 +82,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_15_150826) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["source_id"], name: "index_users_on_source_id", unique: true
+  end
+
+  create_table "webhooks", force: :cascade do |t|
+    t.string "source"
+    t.string "event_name"
+    t.json "payload"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "papers", "conferences"

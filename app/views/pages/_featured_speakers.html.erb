@@ -1,0 +1,38 @@
+   <div class="relative mt-12 mx-auto w-7xl rounded-lg bg-white [box-shadow:0_40px_0_0_#CC7996,0_15px_0_0_#CC7996] border-4 border-rose-800">
+      <div class="p-8">
+        <h3 class="text-center font-bold text-2xl text-rose-800">
+          Speaker List
+        </h3>
+        <div class="flex flex-wrap mt-8 md:flex-row flex-col">
+
+          <% speakers.each do |speaker| %>
+            <%= render "featured_speaker", speaker: %>
+          <% end %>
+
+          <% if speakers.length <=> 3 %>
+            <% (3 - speakers.length).times do  %>
+                <div class="flex w-full md:w-1/3 md:flex-row flex-col items-center mt-8 md:mt-4">
+                    <div class="rounded-xl border-4 border-rose-400 h-24 w-24 bg-rose-200 flex justify-center items-center">
+                    <i class="text-4xl fa-solid fa-face-smile text-rose-400"></i>
+                    </div>
+                    <div class="pt-4 px-4 flex flex-col justify-end max-sm:items-center">
+                        <div class="h-6 w-32 bg-rose-100 rounded-lg"></div>
+                        <div class="mt-2 h-6 w-48 bg-rose-100 rounded-lg"></div>
+                        <div class="mt-2 h-4 w-24 bg-rose-100 rounded-lg"></div>
+                    </div>
+                </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="h-32 pt-8 flex justify-center">
+        <%= link_to new_paper_path do %>
+          <button
+            class="animate-pulse button mb-8 px-8 h-12 bg-rose-500 rounded-lg cursor-pointer select-none active:translate-y-2 active:[box-shadow:0_0px_0_0_#be123c,0_0px_0_0_#1b70f841] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#be123c,0_15px_0_0_#1b70f841]"
+          >
+            <span class="flex justify-center items-center h-full text-white font-bold text-lg"> <i class="fa-solid fa-person-chalkboard pr-2"></i>Call For Papers</span>
+          </button>
+        <% end %>
+      </div>
+    </div>

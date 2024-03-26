@@ -53,3 +53,4 @@
 # Ignore fly config
 #
 /fly.toml
+.DS_Store
