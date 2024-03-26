@@ -1,13 +1,6 @@
 class WebhooksController < ApplicationController
   skip_forgery_protection
 
-  def create
-    webhook = Webhook.new(webhook_params)
-    webhook.save
-
-    head :ok
-  end
-
   def tito
     # todo: verify authenticity of payload
     # key = 'YOUR EVENT SECURITY TOKEN'
