@@ -18,5 +18,20 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :featured_speakers do
+    member do
+      patch :bump_up
+      patch :bump_down
+    end
+  end
+
   resources :subscribers
+
+  resources :webhooks, only: [] do
+    collection do
+      post :tito
+    end
+  end
+
+  resources :users, only: [:edit, :update]
 end
