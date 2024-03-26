@@ -18,7 +18,7 @@ class WebhooksController < ApplicationController
 
     if webhook.save
         case webhook_name
-        when 'registration.completed'
+        when 'registration.finished'
             SendBotNotificationJob.perform_later("New Ticket Sale!")
         end
     else
