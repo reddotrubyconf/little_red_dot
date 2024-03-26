@@ -8,6 +8,7 @@ class ConferenceResource < Madmin::Resource
   attribute :agenda
   attribute :active
   attribute :call_for_papers
+  attribute :sponsorship_prospectus
   attribute :created_at, form: false
   attribute :updated_at, form: false
 
