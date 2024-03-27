@@ -1,5 +1,6 @@
 # Below are the routes for madmin
 namespace :madmin do
+  resources :featured_speakers
   resources :webhooks
   resources :papers
   resources :speaker_profiles
