@@ -37,17 +37,32 @@
   <h1 class="text-white text-4xl font-bold">Call For Papers</h1>
 </div>
 
-<div class="mt-12 pt-12 pb-8 mb-24 mx-8 md:mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 bg-white rounded-lg border-4 border-rose-800 text-black">
-  <% unless user_signed_in? %>
-    <div class="flex justify-center">
-      <%= button_to user_github_omniauth_authorize_path, data: { turbo: false }, method: :post do %>
-                   <div class='button mb-8 px-8 h-12 bg-slate-500 rounded-lg cursor-pointer select-none active:translate-y-2  active:[box-shadow:0_0px_0_0_#000000,0_0px_0_0_#000000] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#000000,0_15px_0_0_#1b70f841]'>
-                     <span class='flex justify-center items-center h-full text-white font-bold text-lg'>
-                       <i class="fa-brands fa-github mr-4"></i>Login with Github</span>
-                   </div>
-      <% end %>
+<div class="mt-2 pt-12 mb-24 px-8 md:mx-auto flex flex-col md:flex-row gap-4">
+  <div class="py-8 md:min-w-[70vw] px-2 sm:px-6 lg:px-8 bg-white rounded-lg border-4 border-rose-800 text-black">
+    <% unless user_signed_in? %>
+      <div class="flex justify-center items-center h-full">
+        <%= button_to user_github_omniauth_authorize_path, data: { turbo: false }, method: :post do %>
+                    <div class='button mb-8 px-8 h-12 bg-slate-500 rounded-lg cursor-pointer select-none active:translate-y-2  active:[box-shadow:0_0px_0_0_#000000,0_0px_0_0_#000000] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#000000,0_15px_0_0_#1b70f841]'>
+                      <span class='flex justify-center items-center h-full text-white font-bold text-lg'>
+                        <i class="fa-brands fa-github mr-4"></i>Login with Github</span>
+                    </div>
+        <% end %>
+      </div>
+    <% else %>
+      <%= render "papers/form", paper: @paper %>
+    <% end %>
+  </div>
+
+  <div class="">
+    <div class="bg-indigo-100 rounded-lg p-4 sticky top-24">
+        <h3 class="my-2 text-indigo-800 text-xl font-bold">Notice</h3>
+        <p class="my-2">
+          1. CFP speakers will receive a free ticket + attend the speakers’ dinner. We do not sponsor flight and accommodation.
+        </p>
+
+         <p class="my-2">
+          2. We will reserve a Super Early Bird ticket for CFP applicants, in case their submissions aren’t selected.
+        </p>
     </div>
-  <% else %>
-    <%= render "papers/form", paper: @paper %>
-  <% end %>
+  </div>
 </div>
