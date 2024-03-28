@@ -1,4 +1,4 @@
-class WebhooksController < ApplicationController
+class IncomingWebhooksController < ApplicationController
   skip_forgery_protection
 
   def tito
@@ -10,7 +10,7 @@ class WebhooksController < ApplicationController
 
     webhook_name = request.headers['X-Webhook-Name']
 
-    webhook = Webhook.new(
+    webhook = IncomingWebhook.new(
         source: "tito",
         event_name: webhook_name,
         payload: JSON.parse(request.body.read)

@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   resources :subscribers
 
-  resources :webhooks, only: [] do
+  resources :incoming_webhooks, path: "webhooks", only: [] do
     collection do
       post :tito
     end
