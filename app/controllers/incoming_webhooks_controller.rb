@@ -20,9 +20,11 @@ class IncomingWebhooksController < ApplicationController
     if webhook.save
         case webhook_name
         when 'registration.finished'
+          payload["line_items"].each do |line_item|
             SendBotNotificationJob.perform_later(
-              "New $#{payload.dig("line_items", 0, "price")} Ticket Sale! #{payload.dig("line_items", 0, "title")}"
+              "#{line_item["quantity"]} x $#{line_item["price"]} | #{line_item["title"]}"
             )
+          end
         end
     else
         SendBotNotificationJob.perform_later("Tito said hi but invalid webhook event!")
