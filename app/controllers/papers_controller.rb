@@ -18,7 +18,7 @@ class PapersController < ApplicationController
     @paper.user = current_user
     @paper.conference = current_conference
 
-    SendBotNotificationJob.perform_later("New paper submitted: #{@paper.title}") unless Rails.env.development?
+    SendBotNotificationJob.perform_later("New paper submitted: #{@paper.title}") if Rails.env.production?
 
     if @paper.save
       redirect_to submitted_papers_path
