@@ -22,11 +22,25 @@
   <h3 class="text-rose-800 text-2xl font-bold mb-8">The Speaker</h3>
 
   <%= f.simple_fields_for :speaker_profile do |p| %>
-    <%= p.input :name, input_html: { class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
-    <%= p.input :affiliation, input_html: { class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
-    <%= p.input :url, label: "Personal Site URL", required: false, input_html: { class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
-    <%= p.input :x_handle, label: "Twitter/X Handle", required: false, input_html: { class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
-    <%= p.input :bio, as: :text, input_html: { class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
+    <%= p.input :name,
+    input_html: {
+      value: existing_speaker_profile&.name,
+      class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
+    <%= p.input :affiliation,
+    input_html: {
+      value: existing_speaker_profile&.affiliation,
+      class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
+    <%= p.input :url,label: "Personal Site URL", required: false, input_html: {
+      value: existing_speaker_profile&.url,
+      class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
+    <%= p.input :x_handle,
+    label: "Twitter/X Handle", required: false, input_html: {
+      value: existing_speaker_profile&.x_handle,
+      class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
+    <%= p.input :bio,
+      as: :text, input_html: {
+      value: existing_speaker_profile&.bio,
+      class: "block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 my-2"} %>
   <% end %>
 
   <div class="flex justify-center mt-8">

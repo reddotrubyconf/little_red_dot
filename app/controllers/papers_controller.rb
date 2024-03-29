@@ -4,6 +4,8 @@ class PapersController < ApplicationController
   def new
     @paper = Paper.new
     @paper.build_speaker_profile
+
+    @existing_speaker_profile = current_user.speaker_profiles.order(created_at: :desc).first
   end
 
   def index
@@ -16,7 +18,7 @@ class PapersController < ApplicationController
     @paper.user = current_user
     @paper.conference = current_conference
 
-    SendBotNotificationJob.perform_later("New paper submitted: #{@paper.title}")
+    SendBotNotificationJob.perform_later("New paper submitted: #{@paper.title}") unless Rails.env.development?
 
     if @paper.save
       redirect_to submitted_papers_path
