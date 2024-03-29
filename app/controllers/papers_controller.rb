@@ -5,7 +5,7 @@ class PapersController < ApplicationController
     @paper = Paper.new
     @paper.build_speaker_profile
 
-    @existing_speaker_profile = current_user.speaker_profiles.order(created_at: :desc).first
+    @existing_speaker_profile = current_user&.speaker_profiles&.order(created_at: :desc)&.first
   end
 
   def index

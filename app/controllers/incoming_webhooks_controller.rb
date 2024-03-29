@@ -21,7 +21,7 @@ class IncomingWebhooksController < ApplicationController
         case webhook_name
         when 'registration.finished'
             SendBotNotificationJob.perform_later(
-              "New Ticket Sale! #{payload.dig("line_items", 0, "title")}"
+              "New $#{payload.dig("line_items", 0, "price")} Ticket Sale! #{payload.dig("line_items", 0, "title")}"
             )
         end
     else
