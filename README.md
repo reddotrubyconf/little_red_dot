@@ -1,24 +1,16 @@
-# README
+# Little Red Dot
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://www.reddotrubyconf.com
 
-Things you may want to cover:
+## Development
 
-* Ruby version
+Setup:
+```ruby
+bundle install
+bin/rails db:setup db:migrate
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Start the app:
+```ruby
+bundle exec foreman start -f=Procfile.dev
+```
