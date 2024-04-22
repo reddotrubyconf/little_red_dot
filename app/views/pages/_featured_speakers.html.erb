@@ -3,7 +3,7 @@
         <h3 class="text-center font-bold text-2xl text-rose-800">
           Featured Speakers
         </h3>
-        <div class="flex flex-wrap mt-8 md:flex-row flex-col">
+        <div class="flex flex-wrap mt-8 pb-8 md:flex-row flex-col">
 
           <% speakers.each do |speaker| %>
             <%= render "featured_speaker", speaker: %>
@@ -24,15 +24,5 @@
             <% end %>
           <% end %>
         </div>
-      </div>
-
-      <div class="h-32 pt-8 flex justify-center">
-        <%= link_to new_paper_path do %>
-          <button
-            class="animate-pulse button mb-8 px-8 h-12 bg-rose-500 rounded-lg cursor-pointer select-none active:translate-y-2 active:[box-shadow:0_0px_0_0_#be123c,0_0px_0_0_#1b70f841] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#be123c,0_15px_0_0_#1b70f841]"
-          >
-            <span class="flex justify-center items-center h-full text-white font-bold text-lg"> <i class="fa-solid fa-person-chalkboard pr-2"></i>Call For Papers</span>
-          </button>
-        <% end %>
       </div>
     </div>
