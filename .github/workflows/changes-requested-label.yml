@@ -1,0 +1,16 @@
+name: Label PR with change requests
+on:
+  pull_request_review:
+    types: [submitted]
+jobs:
+  label-on-change-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if changes were requested
+        if: github.event.review.state == 'changes_requested'
+        uses: pullreminders/label-when-approved-action@master
+        env:
+          APPROVALS: "1"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ADD_LABEL: "need%20fixes"
+          REMOVE_LABEL: "approved"
