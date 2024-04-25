@@ -19,7 +19,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.payload.pull_request.number,
-              labels: ['need%20fixes']
+              labels: ['need fixes']
             });
 
             await github.rest.issues.removeLabel({
