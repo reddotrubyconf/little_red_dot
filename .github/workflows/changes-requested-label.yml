@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check if changes were requested
-        if: github.event.review.state == 'submitted/changes_requested'
+        if: github.event.review.state == 'changes_requested'
         uses: pullreminders/label-when-approved-action@master
         env:
           APPROVALS: "1"
