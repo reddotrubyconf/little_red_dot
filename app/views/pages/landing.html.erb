@@ -1,6 +1,8 @@
-<div class="fixed top-0 w-screen bg-teal-100 h-12 z-50 bg-teal-100 border-b-4 border-b-teal-800 flex justify-center items-center text-xs md:text-sm">
-  <span>CFPs open till 1 June</span>
-  <%= link_to "Submit your papers", new_paper_path, class: "ml-4 text-teal-800 font-bold decoration-dotted underline underline-offset-8" %>
+<div class="fixed top-0 w-screen h-16 z-50 bg-teal-100 border-b-4 border-b-teal-800 flex justify-end items-center text-xs md:text-sm">
+  <%= link_to "Tickets", "#tickets", class: "mr-4 text-teal-800 font-bold rounded-lg" %>
+  <%= link_to "Speakers", "#speakers", class: "mr-4 text-teal-800 font-bold rounded-lg" %>
+  <%= link_to "Venue", "#venue", class: "mr-4 text-teal-800 font-bold rounded-lg" %>
+  <%= link_to "Sponsors", "#sponsors", class: "mr-4 text-teal-800 font-bold rounded-lg" %>
 </div>
 
 <div class="container mx-auto mb-32 px-8 lg:px-0">
@@ -9,12 +11,26 @@
       <div class="lg:pt-20 mb-8">
         <%= image_tag "dally.png", class: "h-48 mb-12 lg:pb-0 lg:h-48" %>
         <h1 class="text-4xl lg:text-7xl font-bold text-rose-500">Red Dot Ruby Conference 2024</h1>
-        <p class="text-black text-lg lg:text-xl mb-2 mt-4 font-bold">🇸🇬 SingPost Centre, Level 5 Auditorium, 25-26 July 2024</p>
+        <a target="_blank" class="decoration-dotted underline underline-offset-8" href="https://www.google.com/maps/dir//SingPost+Auditorium,+10+Eunos+Rd+8,+%2305-30,+SingPost+Centre,+408600/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x31da190058e45f7b:0x9e8e0ec8d5dab5f!3e0?sa=X&ved=1t:3747&ictx=111">
+          <p class="text-black text-lg lg:text-xl mb-2 mt-4 font-bold">🇸🇬 SingPost Centre, Level 5 Auditorium, 25-26 July 2024</p>
+        </a>
+        <div class="pt-8 md:pt-16 md:pb-8">
+      <%= link_to new_paper_path do %>
+        <button
+          class="animate-pulse button mb-4 px-8 h-12 bg-rose-500 rounded-lg cursor-pointer select-none active:translate-y-2 active:[box-shadow:0_0px_0_0_#be123c,0_0px_0_0_#1b70f841] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#be123c,0_15px_0_0_#1b70f841]"
+        >
+          <span class="flex justify-center items-center h-full text-white font-bold text-lg"> <i class="fa-solid fa-person-chalkboard pr-2"></i>Call For Papers</span>
+        </button>
+      <% end %>
+    </div>
       </div>
       <%= image_tag "wavy.png", class: "max-sm:hidden w-48 mb-12" %>
     </div>
+    <div id="tickets"></div>
     <div class="w-full lg:w-4/12">
       <tito-widget event="cu/rdrc24"></tito-widget>
+    </div>
+    <div>
     </div>
   </div>
   <div class="relative flex flex-wrap rounded-lg bg-white [box-shadow:0_40px_0_0_#c3e5e2,0_15px_0_0_#c3e5e2] border-4 border-teal-800">
@@ -32,17 +48,13 @@
       <%= image_tag "ruby_conf_prev.jpeg" %>
     </div>
     <div class="lg:w-1/2 w-full px-8 pt-8 lg:pt-12">
-      <h1 class="text-2xl lg:text-4xl font-bold text-rose-600">We are so back.</h1>
-      <p class="text-xl lg:text-2xl mb-8">
-        We've missed you as much as you've missed us.
-      </p>
-      <p class="text-sm lg:text-md text-slate-500 my-4"><strong>RedDotRubyConf (RDRC)</strong>, the annual Ruby conference in Singapore, was previously put on hiatus during the COVID pandemic for health and safety reasons.</p>
+      <h1 class="text-2xl lg:text-4xl font-bold text-rose-600">A gem-packed, two-day single-track Ruby conference in sunny Singapore.</h1>
+
       <p class="text-sm lg:text-md text-slate-500 my-4">
-        Well, we're excited to announce that we're back for a much awaited RDRC reboot in 2024, and we're ready to bring the Ruby community together again!
+        <strong>Red Dot Ruby Conference (RDRC)</strong> is the only Ruby programming language conference in Singapore, bringing together the brightest minds in the Ruby community in the region since 2011.
       </p>
-      <p class="text-sm lg:text-md text-slate-500 my-4">Join us here in sunny Singapore (25-26 July 2024) for a <i>gem</i>-packed, two-day single-track conference celebrating the programming language we all know and love.</p>
-      <p class="text-sm lg:text-md text-slate-500 mt-4 mb-8">
-        We look forward to seeing you all soon, fellow Rubyists!
+      <p class="text-sm lg:text-md text-slate-500 my-4">
+        After a brief hiatus due to the global pandemic in 2020, we are excited to reboot in 2024 and celebrating the programming language we all know and love. We can’t wait to meet in Singapore!
       </p>
     </div>
   </div>
@@ -59,7 +71,7 @@
     <i class="text-5xl fa-solid fa-gem text-white"></i>
   </div>
 
-  <div class="container mx-auto pt-20 mb-24 px-8 lg:px-0">
+  <div id="speakers" class="container mx-auto pt-20 mb-24 px-8 lg:px-0">
     <h1 class="font-bold text-xl lg:text-5xl text-rose-800 text-center">
       2 days. 1 track. 16+ speakers.
     </h1>
@@ -191,9 +203,19 @@
     <!--      </div>-->
   </div>
 </div>
-<div class="pb-24 relative bg-indigo-100 text-center">
+
+<div id="venue" class="pt-24 pb-24 relative bg-sky-100 text-center px-24">
+<h1 class="text-xl lg:text-5xl font-bold text-sky-800">Our Little Red Dot</h1>
+    <%= render "singapore" %>
+</div>
+
+<div id="sponsors" class="pb-24 relative bg-indigo-100 text-center">
   <div class="container mx-auto pt-20 mb-24 px-8 lg:px-0">
     <h1 class="text-xl lg:text-5xl font-bold text-indigo-800">Our Benevolent Sponsors</h1>
+
+    <div class="max-w-2xl pt-4 mx-auto text-indigo-900">
+      <p>Our sponsorship packages are a great opportunity to engage with some of the brightest minds in the ruby community through physical booths and digital media surfaces.</p>
+    </div>
 
     <div class="py-8 flex md:flex-row md:justify-center md:items-center flex-col">
       <a target="_blank" href="<%= current_conference.sponsorship_prospectus.presence || "mailto:organisers@reddotrubyconf.com" %>">
