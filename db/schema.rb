@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_28_171956) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_16_103100) do
   create_table "conferences", id: :string, force: :cascade do |t|
     t.string "name", null: false
     t.string "address"
@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_28_171956) do
     t.string "github_handle"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "bio"
   end
 
   create_table "incoming_webhooks", id: :string, force: :cascade do |t|

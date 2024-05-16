@@ -47,7 +47,8 @@ class FeaturedSpeakersController < ApplicationController
             :display_picture,
             :name,
             :title,
-            :github_handle
+            :github_handle,
+            :bio
         )
     end
 end
