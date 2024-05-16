@@ -15,16 +15,16 @@ export default class extends Controller {
   }
 
   showDialog() {
-    const bio = this.bioValue || "No bio available";
+    const bio = this.bioValue || "No talk summary available";
     Swal.fire({
       title: this.nameValue,
-      html: `${this.titleValue} <br> <br> <hr> <br> ${bio}`,
+      html: `<p class="text-sm">${this.titleValue}</p> <br> <hr> <br> ${bio}`,
       imageUrl: this.imageUrlValue,
-      imageHeight: 150,
+      imageHeight: 120,
       confirmButtonText: 'wow',
       confirmButtonColor: 'rgb(251, 113, 133)',
       customClass: {
-        title: "p-0",
+        title: "p-0 text-lg",
         image: "rounded-lg border-rose-400 border-4"
       }
     })
