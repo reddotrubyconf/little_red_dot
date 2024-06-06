@@ -48,7 +48,7 @@
 
 # Ignore credentials
 #
-/config/credentials.yml.enc
+# /config/credentials.yml.enc
 
 # Ignore fly config
 #
