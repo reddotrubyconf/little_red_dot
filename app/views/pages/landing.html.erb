@@ -14,15 +14,6 @@
         <a target="_blank" class="decoration-dotted underline underline-offset-8" href="https://www.google.com/maps/dir//SingPost+Auditorium,+10+Eunos+Rd+8,+%2305-30,+SingPost+Centre,+408600/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x31da190058e45f7b:0x9e8e0ec8d5dab5f!3e0?sa=X&ved=1t:3747&ictx=111">
           <p class="text-black text-lg lg:text-xl mb-2 mt-4 font-bold">🇸🇬 SingPost Centre, Level 5 Auditorium, 25-26 July 2024</p>
         </a>
-        <div class="pt-8 md:pt-16 md:pb-8">
-      <%= link_to new_paper_path do %>
-        <button
-          class="animate-pulse button mb-4 px-8 h-12 bg-rose-500 rounded-lg cursor-pointer select-none active:translate-y-2 active:[box-shadow:0_0px_0_0_#be123c,0_0px_0_0_#1b70f841] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#be123c,0_15px_0_0_#1b70f841]"
-        >
-          <span class="flex justify-center items-center h-full text-white font-bold text-lg"> <i class="fa-solid fa-person-chalkboard pr-2"></i>Call For Papers</span>
-        </button>
-      <% end %>
-    </div>
       </div>
       <%= image_tag "wavy.png", class: "max-sm:hidden w-48 mb-12" %>
     </div>
@@ -75,15 +66,6 @@
     <h1 class="font-bold text-xl lg:text-5xl text-rose-800 text-center">
       2 days. 1 track. 16+ speakers.
     </h1>
-    <div class="pt-8 flex justify-center">
-      <%= link_to new_paper_path do %>
-        <button
-          class="animate-pulse button mb-4 px-8 h-12 bg-rose-500 rounded-lg cursor-pointer select-none active:translate-y-2 active:[box-shadow:0_0px_0_0_#be123c,0_0px_0_0_#1b70f841] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#be123c,0_15px_0_0_#1b70f841]"
-        >
-          <span class="flex justify-center items-center h-full text-white font-bold text-lg"> <i class="fa-solid fa-person-chalkboard pr-2"></i>Call For Papers</span>
-        </button>
-      <% end %>
-    </div>
     <%= render "featured_speakers", speakers: @speakers %>
     <!--      <div class="max-md:hidden flex">-->
     <!--         <div class="mt-24 transform -rotate-90 h-4 text-lg font-bold text-rose-800">-->
