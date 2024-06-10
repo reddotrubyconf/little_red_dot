@@ -1,8 +1,12 @@
 class FeaturedSpeakersController < ApplicationController
-    before_action :validate_admin
+    # before_action :validate_admin
 
     def new
         @speaker = FeaturedSpeaker.new
+    end
+
+    def edit
+        @speaker = FeaturedSpeaker.find(params[:id])
     end
 
     def create
@@ -12,6 +16,16 @@ class FeaturedSpeakersController < ApplicationController
             redirect_to featured_speakers_path
         else
             render :new, status: :unprocessable_entity
+        end
+    end
+
+    def update
+        @speaker = FeaturedSpeaker.find(params[:id])
+
+        if @speaker.update(speaker_params)
+            redirect_to featured_speakers_path
+        else
+            render :edit, status: :unprocessable_entity
         end
     end
 

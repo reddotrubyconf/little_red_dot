@@ -21,7 +21,7 @@ export default class extends Controller {
       html: `<p class="text-sm">${this.titleValue}</p> <br>`,
       imageUrl: this.imageUrlValue,
       imageHeight: 120,
-      confirmButtonText: 'wow',
+      confirmButtonText: 'awesome',
       confirmButtonColor: 'rgb(251, 113, 133)',
       customClass: {
         title: "p-0 text-lg",
