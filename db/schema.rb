@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_16_103100) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_11_123126) do
   create_table "conferences", id: :string, force: :cascade do |t|
     t.string "name", null: false
     t.string "address"
@@ -33,6 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_16_103100) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "bio"
+    t.string "presentation_title"
   end
 
   create_table "incoming_webhooks", id: :string, force: :cascade do |t|
