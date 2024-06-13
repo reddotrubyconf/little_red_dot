@@ -197,12 +197,12 @@
   <%= render "singapore" %>
 </div>
 
-<div id="sponsors" class="pb-24 relative bg-indigo-100 text-center">
+<div id="sponsors" class="pb-8 relative bg-indigo-100 text-center">
   <div class="container mx-auto pt-20 mb-24 px-8 lg:px-0">
-    <h1 class="text-xl lg:text-5xl font-bold text-indigo-800">Our Benevolent Sponsors</h1>
+    <h1 class="text-xl lg:text-5xl font-bold text-indigo-800">Our Sponsors</h1>
 
     <div class="max-w-2xl pt-4 mx-auto text-indigo-900">
-      <p>Our sponsorship packages are a great opportunity to engage with some of the brightest minds in the ruby community through physical booths and digital media surfaces.</p>
+      <p>Our sponsorship packages are a great opportunity to engage with some of the brightest minds in the ruby community through physical booths and digital media surfaces. Find out more in our Sponsorship Prospectus below!</p>
     </div>
 
     <div class="py-8 flex md:flex-row md:justify-center md:items-center flex-col">
@@ -214,74 +214,41 @@
         </button>
       </a>
     </div>
-    <div class="relative mt-2 mx-auto w-7xl p-8 rounded-lg bg-white [box-shadow:0_40px_0_0_#a5b4fc,0_15px_0_0_#a5b4fc] border-4 border-indigo-800">
-      <div class="mt-8 mb-16">
-        <h3 class="text-3xl font-bold pb-8">
-          Silver Tier
-        </h3>
-        <div class="flex justify-center flex-col md:flex-row">
-          <div class="mb-4 mt-4 flex w-full md:w-1/2 md:flex-row flex-col items-center justify-center">
-            <a href="https://www.appsignal.com">
-              <%= image_tag "appsignal.svg", style: "width: 20rem;" %>
-            </a>
-          </div>
-          <div class="mb-4 mt-4 flex w-full md:w-1/2 md:flex-row flex-col items-center justify-center">
-            <a href="https://www.ascenda.com">
-              <%= image_tag "ascenda.png", style: "width: 20rem;" %>
-            </a>
-          </div>
+
+    <div class="relative mt-2 mx-auto w-7xl p-8 rounded-lg bg-slate-50 [box-shadow:0_40px_0_0_#a5b4fc,0_15px_0_0_#a5b4fc] border-4 border-indigo-800">
+
+      <!-- Partner Sponsors -->
+      <h3 class="text-4xl font-bold m-4">Our Partners</h3>
+      <div class="flex flex-wrap justify-around">
+        <div class="flex content-center items-center m-4 mt-0 lg:mx-16 lg:mt-8 h-40" style="width: 300px; max-width: 300px;">
+          <a href="https://www.coingecko.com/"><%= image_tag "coin_gecko.png", style: "width: 20rem;" %></a>
+        </div>
+        <div class="flex content-center items-center m-4 mt-0 lg:mx-16 lg:mt-8 h-40" style="width: 300px; max-width: 300px;">
+          <a href="https://www.tech.gov.sg/"><%= image_tag "stack.png", style: "width: 20rem;" %></a>
+        </div>
+        <div class="flex content-center items-center m-4 mt-0 lg:mx-16 lg:mt-8 h-40" style="width: 300px; max-width: 300px;">
+          <a href="https://www.appsignal.com"><%= image_tag "appsignal.svg", style: "width: 20rem;" %></a>
+        </div>
+        <div class="flex content-center items-center m-4 mt-0 lg:mx-16 lg:mt-8 h-40" style="width: 300px; max-width: 300px;">
+          <a href="https://www.ascenda.com"><%= image_tag "ascenda.png", style: "width: 20rem;" %></a>
         </div>
       </div>
-      <hr>
-      <div class="mt-8 mb-16">
-        <h3 class="text-3xl font-bold pb-8">
-          Food Sponsor
-        </h3>
-        <div class="flex justify-center">
-          <a href="https://www.tech.gov.sg/">
-            <%= image_tag "stack.png", style: "width: 20rem;" %>
-          </a>
+
+      <hr />
+
+      <!-- Ruby Friends Sponsors -->
+      <h3 class="text-3xl font-bold m-4">Ruby Friends</h3>
+      <div class="flex flex-wrap justify-around">
+        <div class="flex flex-col items-center m-8 lg:mx-16 lg:mt-8" style="width: 300px; max-width: 300px;">
+          <%= image_tag "mohit.jpg", class: "rounded-full border-4 border-indigo-400 h-32 w-32 mb-4" %>
+          <h3 class="text-xl font-bold text-indigo-800 text-start">Mohit Sindhwani</h3>
+          <p class="text-xl text-neutral-800 text-center">CTO, Quantum Inventions</p>
         </div>
-      </div>
-      <hr>
-      <div class="mt-8 mb-16">
-        <h3 class="text-3xl font-bold pb-8">
-          Coffee Booth Sponsor
-        </h3>
-        <div class="flex justify-center">
-          <a href="https://www.coingecko.com/">
-            <%= image_tag "coin_gecko.png", style: "width: 20rem;" %>
-          </a>
-        </div>
-      </div>
-      <hr>
-      <div class="mt-16 mb-16">
-        <h3 class="text-2xl font-bold pb-4">
-          Ruby Friends
-        </h3>
-        <div class="flex justify-center flex-col md:flex-row">
-          <div class="mt-4 flex w-full md:w-1/2 md:flex-row flex-col items-center justify-center">
-            <%= image_tag "mohit.jpg", class: "rounded-full border-4 border-indigo-400 h-16 w-16" %>
-            <div class="py-4 px-4 flex flex-col items-start justify-end items-center md:items-start">
-              <h3 class="text-xl font-bold text-indigo-800 text-start">
-                  Mohit Sindhwani
-              </h3>
-              <p class="text-neutral-800 text-start">
-                  CTO, Quantum Inventions
-              </p>
-            </div>
-          </div>
-          <div class="mt-4 flex w-full md:w-1/2 md:flex-row flex-col items-center justify-center">
-            <%= image_tag "https://github.com/TayKangSheng.png", class: "rounded-full border-4 border-indigo-400 h-16 w-16" %>
-            <div class="py-4 px-4 flex flex-col items-start justify-end items-center md:items-start">
-              <h3 class="text-xl font-bold text-indigo-800 text-start">
-                  Kang Sheng
-              </h3>
-              <p class="text-neutral-800 text-start">
-                  Software Engineer
-              </p>
-            </div>
-          </div>
+
+        <div class="flex flex-col items-center m-8 lg:mx-16 lg:mt-8" style="width: 300px; max-width: 300px;">
+          <%= image_tag "https://github.com/TayKangSheng.png", class: "rounded-full border-4 border-indigo-400 h-32 w-32 mb-4" %>
+          <h3 class="text-xl font-bold text-indigo-800 text-start">Kang Sheng</h3>
+          <p class="text-xl text-neutral-800 text-center">Software Engineer</p>
         </div>
       </div>
     </div>
@@ -289,7 +256,9 @@
 </div>
 
 <div class="min-h-12 bg-white py-8">
-  <div class="container mx-auto text-center md:text-right">Organised with <i class="text-xl fa-solid fa-gem text-rose-600"></i> by RubySG</div>
+  <div class="container mx-auto text-center md:text-right">
+    Organised with <i class="text-xl fa-solid fa-gem text-rose-600"></i> by <a class="underline" href="https://ruby.sg">RubySG</a>
+  </div>
 </div>
 
 <script>
