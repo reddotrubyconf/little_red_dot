@@ -1,8 +1,8 @@
 <div class="fixed top-0 w-screen h-16 z-50 bg-teal-100 border-b-4 border-b-teal-800 flex justify-end items-center text-xs md:text-sm">
-  <%= link_to "Tickets", "#tickets", class: "mr-4 text-teal-800 font-bold rounded-lg" %>
-  <%= link_to "Speakers", "#speakers", class: "mr-4 text-teal-800 font-bold rounded-lg" %>
-  <%= link_to "Venue", "#venue", class: "mr-4 text-teal-800 font-bold rounded-lg" %>
-  <%= link_to "Sponsors", "#sponsors", class: "mr-4 text-teal-800 font-bold rounded-lg" %>
+  <%= link_to "Tickets", "#tickets", class: "mr-4 text-teal-800 font-bold rounded-lg", data: { turbo: "false" } %>
+  <%= link_to "Speakers", "#speakers", class: "mr-4 text-teal-800 font-bold rounded-lg", data: { turbo: "false" } %>
+  <%= link_to "Venue", "#venue", class: "mr-4 text-teal-800 font-bold rounded-lg", data: { turbo: "false" } %>
+  <%= link_to "Sponsors", "#sponsors", class: "mr-4 text-teal-800 font-bold rounded-lg", data: { turbo: "false" } %>
 </div>
 
 <div class="container mx-auto mb-32 px-8 lg:px-0">
@@ -17,8 +17,7 @@
       </div>
       <%= image_tag "wavy.png", class: "max-sm:hidden w-48 mb-12" %>
     </div>
-    <div id="tickets"></div>
-    <div class="w-full lg:w-4/12">
+    <div id="tickets" class="w-full lg:w-4/12">
       <tito-widget event="cu/rdrc24"></tito-widget>
     </div>
     <div>
