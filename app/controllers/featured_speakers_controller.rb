@@ -61,6 +61,7 @@ class FeaturedSpeakersController < ApplicationController
             :display_picture,
             :name,
             :title,
+            :presentation_title,
             :github_handle,
             :bio
         )
