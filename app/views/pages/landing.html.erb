@@ -4,8 +4,7 @@
   <%= link_to "Venue", "#venue", class: "mr-4 text-teal-800 font-bold rounded-lg", data: { turbo: "false" } %>
   <%= link_to "Sponsors", "#sponsors", class: "mr-4 text-teal-800 font-bold rounded-lg", data: { turbo: "false" } %>
 </div>
-
-<div class="container mx-auto mb-32 px-8 lg:px-0">
+<div class="container mx-auto mb-32 px-8 lg:px-4">
   <div class="flex flex-wrap mt-24 mb-12 lg:mb-0">
     <div class="w-full lg:w-8/12">
       <div class="lg:pt-20 mb-8">
@@ -29,17 +28,14 @@
         <path d="M 35,40 30,48 21,42 11,44 9,34 0,30 6,20 4,10 14,8 20,0 28,5 38,3 l 1,10 8,5 -5,8 2,10z" stroke="rgb(190 24 93)" stroke-linejoin="bevel" fill="rgb(190 24 93)" />
       </svg>
     </div>
-
     <div class="max-sm:hidden absolute -right-3 -top-3">
       <i class="text-5xl fa-solid fa-gem text-white"></i>
     </div>
-
     <div class="lg:w-1/2 w-full bg-white overflow-hidden">
       <%= image_tag "ruby_conf_prev.jpeg" %>
     </div>
     <div class="lg:w-1/2 w-full px-8 py-8 lg:pt-12">
       <h1 class="text-2xl lg:text-4xl font-bold text-rose-600">A gem-packed, two-day single-track Ruby conference in sunny Singapore.</h1>
-
       <p class="text-sm lg:text-md text-slate-500 my-4">
         <strong>Red Dot Ruby Conference (RDRC)</strong> is the only Ruby programming language conference in Singapore, bringing together the brightest minds in the Ruby community in the region since 2011.
       </p>
@@ -49,19 +45,16 @@
     </div>
   </div>
 </div>
-
 <div class="pt-18 bg-rose-100 pb-4 relative">
   <div class="sm:hidden absolute -top-10 w-screen flex justify-center">
     <svg class="spinning-ruby" viewBox="-1 -1 50 50" width="100px">
       <path d="M 35,40 30,48 21,42 11,44 9,34 0,30 6,20 4,10 14,8 20,0 28,5 38,3 l 1,10 8,5 -5,8 2,10z" stroke="rgb(190 24 93)" stroke-linejoin="bevel" fill="rgb(190 24 93)" />
     </svg>
   </div>
-
   <div class="sm:hidden absolute -top-2 w-screen flex justify-center">
     <i class="text-5xl fa-solid fa-gem text-white"></i>
   </div>
-
-  <div id="speakers" class="container mx-auto pt-20 mb-24 px-8 lg:px-0">
+  <div id="speakers" class="container mx-auto pt-20 mb-24 px-8 lg:px-4">
     <h1 class="font-bold text-xl lg:text-5xl text-rose-800 text-center">
       2 days. 1 track. 16+ speakers.
     </h1>
@@ -185,7 +178,6 @@
     <!--      </div>-->
   </div>
 </div>
-
 <div id="venue" class="pt-20 md:pt-24 pb-24 relative bg-sky-100 text-center px-8">
   <h1 class="text-xl lg:text-5xl font-bold text-sky-800">Our Little Red Dot</h1>
   <div class="max-w-2xl pt-4 mx-auto text-sky-900">
@@ -195,16 +187,13 @@
   </div>
   <%= render "singapore" %>
 </div>
-
 <!-- Sponsors section -->
 <div id="sponsors" class="pb-8 relative bg-indigo-100 text-center">
-  <div class="container mx-auto pt-20 mb-24 px-8 lg:px-0">
+  <div class="container mx-auto pt-20 mb-24 px-8 lg:px-4">
     <h1 class="text-5xl font-bold text-indigo-800">Sponsors</h1>
-
     <div class="max-w-2xl pt-4 mx-auto text-indigo-950">
       <p>Our sponsorship packages are a great opportunity to engage with some of the brightest minds in the ruby community through physical booths and digital media surfaces. Find out more in our Sponsorship Prospectus below!</p>
     </div>
-
     <div class="py-8 flex md:flex-row md:justify-center md:items-center flex-col">
       <a target="_blank" href="<%= current_conference.sponsorship_prospectus.presence || "mailto:organisers@reddotrubyconf.com" %>">
         <button
@@ -214,7 +203,6 @@
         </button>
       </a>
     </div>
-
     <div class="mt-2 mx-auto w-7xl p-8 rounded-lg bg-slate-50 [box-shadow:0_40px_0_0_#a5b4fc,0_15px_0_0_#a5b4fc] border-4 border-indigo-800">
       <div class="flex flex-wrap justify-around">
         <div class="flex content-center items-center m-4 mt-0 lg:mx-16 lg:mt-8 h-40" style="width: 300px; max-width: 300px;">
@@ -230,11 +218,8 @@
           <a href="https://www.ascenda.com"><%= image_tag "ascenda.png", style: "width: 20rem;" %></a>
         </div>
       </div>
-
       <hr />
-
       <h3 class="text-3xl font-bold mt-8 m-4">Ruby Friends</h3>
-
       <!-- Ruby Friends Sponsors -->
       <div class="flex flex-wrap justify-around">
         <div class="flex justify-center items-center flex-wrap">
@@ -243,7 +228,6 @@
             <h3 class="text-xl font-bold text-indigo-800 text-start">Mohit Sindhwani</h3>
             <p class="text-xl text-neutral-800 text-center">CTO, Quantum Inventions</p>
           </div>
-
           <div class="flex flex-col items-center m-8 lg:mx-16 lg:mt-8" style="">
             <%= image_tag "https://github.com/TayKangSheng.png", class: "rounded-full border-4 border-indigo-400 h-24 w-24 mb-4" %>
             <h3 class="text-xl font-bold text-indigo-800 text-start">Kang Sheng</h3>
@@ -254,23 +238,80 @@
     </div>
   </div>
 </div>
-
+<!-- About -->
+<div id="about" class="pb-8 relative bg-rose-100 text-center">
+  <div class="container mx-auto pt-20 mb-24 px-8 lg:px-4">
+    <h1 class="text-5xl font-bold text-rose-800">About</h1>
+    <div class="max-w-2xl pt-4 mx-auto text-rose-950">
+      <p>
+        Red Dot Ruby Conference is a not-for-profit event dedicated to fostering a vibrant community of Ruby developers and advancing the Ruby ecosystem in Singapore and Asia. 
+        Since 2011, the conference is organised entirely by a group of volunteers.
+      </p>
+    </div>
+    <div class="py-8 flex md:flex-row md:justify-center md:items-center flex-col">
+      <ul role="list" class="mx-auto grid max-w-2xl grid-cols-2 gap-x-8 gap-y-8 text-center sm:grid-cols-3 lg:mx-0 lg:max-w-none lg:grid-cols-6">
+        <li>
+          <a href="https://www.taykangsheng.com/">
+            <img class="mx-auto h-16 w-16 rounded-full border-2 border-rose-200" src="https://avatars.githubusercontent.com/u/10722197?v=4" alt="">
+            <h3 class="mt-4 text-base font-semibold">Kang Sheng</h3>
+            <p class="text-sm">Sponsorships</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://onurozer.me">
+            <img class="mx-auto h-16 w-16 rounded-full border-2 border-rose-200" src="https://avatars.githubusercontent.com/u/55616?v=4" alt="">
+            <h3 class="mt-4 text-base font-semibold">Onur Ozer</h3>
+            <p class="text-sm">Marketing</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/coffeesam">
+            <img class="mx-auto h-16 w-16 rounded-full border-2 border-rose-200" src="https://avatars.githubusercontent.com/u/297375?v=4" alt="">
+            <h3 class="mt-4 text-base font-semibold">Sam Hon</h3>
+            <p class="text-sm">Organisation</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Drenmi">
+            <img class="mx-auto h-16 w-16 rounded-full border-2 border-rose-200" src="https://avatars.githubusercontent.com/u/5259935?v=4" alt="">
+            <h3 class="mt-4 text-base font-semibold">Ted Johansson</h3>
+            <p class="text-sm">Lead</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/peanutyabing">
+            <img class="mx-auto h-16 w-16 rounded-full border-2 border-rose-200" src="https://avatars.githubusercontent.com/u/48173359?v=4" alt="">
+            <h3 class="mt-4 text-base font-semibold">Yabing</h3>
+            <p class="text-sm">Logistics</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.zonghan.dev/">
+            <img class="mx-auto h-16 w-16 rounded-full border-2 border-rose-200" src="https://avatars.githubusercontent.com/u/10085133?v=4" alt="">
+            <h3 class="mt-4 text-base font-semibold">Zong Han</h3>
+            <p class="text-sm">Intern</p>
+          </a>
+        </li>
+        <!-- More people... -->
+      </ul>
+    </div>
+  </div>
+</div>
 <div class="min-h-12 bg-white py-8">
   <div class="container mx-auto text-center md:text-right">
     Organised with <i class="text-xl fa-solid fa-gem text-rose-600"></i> by <a class="underline" href="https://ruby.sg">RubySG</a>
   </div>
 </div>
-
 <script>
-    window.onscroll = function () {
-        scrollRotate();
-    };
+  window.onscroll = function () {
+      scrollRotate();
+  };
 
-    function scrollRotate() {
-        let rubies = document.querySelectorAll(".spinning-ruby");
+  function scrollRotate() {
+      let rubies = document.querySelectorAll(".spinning-ruby");
 
-        rubies.forEach((ruby) => {
-            ruby.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
-        });
-    }
+      rubies.forEach((ruby) => {
+          ruby.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
+      });
+  }
 </script>
