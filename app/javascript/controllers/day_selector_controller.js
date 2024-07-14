@@ -22,8 +22,8 @@ export default class extends Controller {
     const selectedContent = this.contentTarget.querySelector(`[data-index="${index}"]`)
     selectedContent.classList.remove("hidden")
 
-    const selectedtoggle = this.toggleTarget.querySelector(`[data-index="${index}"]`)
-    selectedtoggle.classList.add("border-2")
-    selectedtoggle.classList.add("border-rose-800")
+    const selectedToggle = this.toggleTarget.querySelector(`[data-index="${index}"]`)
+    selectedToggle.classList.add("border-2")
+    selectedToggle.classList.add("border-rose-800")
   }
 }
