@@ -24,11 +24,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_11_123126) do
     t.string "sponsorship_prospectus"
   end
 
-  create_table "featured_speakers", id: :string, force: :cascade do |t|
+  create_table "featured_speakers", force: :cascade do |t|
     t.string "display_picture", null: false
     t.string "name", null: false
     t.string "title", null: false
-    t.integer "display_order"
     t.string "github_handle"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,0 +1,55 @@
+<% 
+  # lol sorry for this ugly code, but it works for now
+
+  def convert_time(timestamp)
+    timestamp = timestamp.to_s.rjust(4, '0')
+    hours = timestamp[0..1].to_i
+    minutes = timestamp[2..3]
+    period = hours >= 12 ? 'PM' : 'AM'
+    hours = hours % 12
+    hours = 12 if hours == 0
+    
+    "#{hours}:#{minutes} #{period}"
+  end
+%>
+
+  <% if days.present? %>
+    <div data-controller="day-selector" class="mt-10">
+      <div class="md:hidden py-1 flex max-w-40 mx-auto text-sm rounded-lg justify-around items-center my-4">
+          <% days.each_with_index do |day, index| %>
+            <% default_klass = index == 0 ? "bg-rose-100 border-2 border-rose-800" : "" %>
+
+            <div data-action="click->day-selector#selectDay" data-index="<%= index %>" class="px-3 py-1 rounded-lg cursor-pointer text-rose-800 font-bold <%= default_klass %>">
+              Day <%= index + 1 %>
+            </div>
+          <% end %>
+      </div>
+      <div class="flex gap-4 md:flex-row flex-col">
+        <% days.each_with_index do |day, index| %>
+          <% default_klass = index == 0 ? "" : "hidden" %>
+
+          <div data-content-index="<%= index %>" class="md:block flex-grow p-4 rounded-lg border-4 border-rose-800 bg-white <%= default_klass %>">
+            <div class="w-full h-full">
+              <h3 class="px-6 py-3 text-center text-lg font-bold text-rose-800">Day <%= index + 1 %></h3>
+              <table class="min-w-full divide-y divide-gray-200">
+                <tbody class="divide-y divide-gray-200">
+                  <% day.each do |event| %>
+                    <tr>
+                      <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 w-1/6"><%= convert_time(event["time"]) %></td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 w-5/6">
+                        <%= event["name"] %>
+                        <br/>
+                        <small>
+                          <%= event["description"] %>
+                        </small>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
