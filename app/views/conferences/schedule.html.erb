@@ -1,0 +1,13 @@
+<div class="flex justify-center mt-12">
+    <div class="max-w-6xl">
+        <%= form_with url: schedule_conference_path, method: :patch do |form| %>
+            <div class="field">
+                <%= form.text_area :schedule, value: @conference.agenda["schedule"].to_json, rows: 20, cols: 80 %>
+            </div>
+
+            <div class="actions">
+                <%= form.submit "Update Schedule", class: "bg-rose-800 text-white px-4 py-2 rounded-md w-full" %>
+            </div>
+        <% end %>
+    </div>
+</div>

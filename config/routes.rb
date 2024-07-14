@@ -34,4 +34,11 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:edit, :update]
+
+  resource :conference do
+    collection do
+      get :schedule
+      patch :schedule
+    end
+  end
 end
