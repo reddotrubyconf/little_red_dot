@@ -15,7 +15,7 @@
 
   <% if days.present? %>
     <div data-controller="day-selector" class="mt-10">
-      <div class="md:hidden py-1 flex max-w-40 mx-auto text-sm rounded-lg justify-around items-center my-4">
+      <div data-day-selector-target="toggle"  class="md:hidden py-1 flex max-w-40 mx-auto text-sm rounded-lg justify-around items-center my-4">
           <% days.each_with_index do |day, index| %>
             <% default_klass = index == 0 ? "bg-rose-100 border-2 border-rose-800" : "" %>
 
@@ -24,11 +24,11 @@
             </div>
           <% end %>
       </div>
-      <div class="flex gap-4 md:flex-row flex-col">
+      <div data-day-selector-target="content" class="flex gap-4 md:flex-row flex-col">
         <% days.each_with_index do |day, index| %>
           <% default_klass = index == 0 ? "" : "hidden" %>
 
-          <div data-content-index="<%= index %>" class="md:block flex-grow p-4 rounded-lg border-4 border-rose-800 bg-white <%= default_klass %>">
+          <div data-index="<%= index %>" class="md:block flex-grow p-4 rounded-lg border-4 border-rose-800 bg-white <%= default_klass %>">
             <div class="w-full h-full">
               <h3 class="px-6 py-3 text-center text-lg font-bold text-rose-800">Day <%= index + 1 %></h3>
               <table class="min-w-full divide-y divide-gray-200">

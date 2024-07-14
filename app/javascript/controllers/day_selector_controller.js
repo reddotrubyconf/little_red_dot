@@ -2,31 +2,28 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="day-selector"
 export default class extends Controller {
-  connect() {
-    console.log("HELLO WORLD")
-  }
+  static targets = [ "toggle", "content"];
 
   selectDay(event) {
-    console.log(event.currentTarget.dataset.index)
     const index = event.currentTarget.dataset.index
 
-    const contentElements = document.querySelectorAll('[data-content-index]');
+    const contentElements = this.contentTarget.querySelectorAll('[data-index]');
     contentElements.forEach(content => {
       content.classList.add("hidden")
     });
 
-    const tabElements = document.querySelectorAll('[data-index]');
-    tabElements.forEach(tab => {
-      tab.classList.remove("border-2")
-      tab.classList.remove("border-rose-800")
+    const toggleElements = this.toggleTarget.querySelectorAll('[data-index]');
+    toggleElements.forEach(toggle => {
+      toggle.classList.remove("border-2")
+      toggle.classList.remove("border-rose-800")
 
     });
 
-    const selectedContent = document.querySelector(`[data-content-index="${index}"]`)
+    const selectedContent = this.contentTarget.querySelector(`[data-index="${index}"]`)
     selectedContent.classList.remove("hidden")
 
-    const selectedTab = document.querySelector(`[data-index="${index}"]`)
-    selectedTab.classList.add("border-2")
-    selectedTab.classList.add("border-rose-800")
+    const selectedtoggle = this.toggleTarget.querySelector(`[data-index="${index}"]`)
+    selectedtoggle.classList.add("border-2")
+    selectedtoggle.classList.add("border-rose-800")
   }
 }
