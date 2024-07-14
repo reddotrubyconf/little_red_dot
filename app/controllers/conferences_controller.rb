@@ -14,7 +14,7 @@ class ConferencesController < ApplicationController
       @schedule = @conference.agenda["schedule"]
     elsif request.patch?
       @conference.update({
-        agenda: @conference.agenda.merge({schedule: JSON.parse(params[:schedule])})
+        agenda: {"schedule" => JSON.parse(params[:schedule])}
       })
 
       redirect_to root_path
