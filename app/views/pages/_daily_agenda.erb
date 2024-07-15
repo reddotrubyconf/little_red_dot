@@ -15,7 +15,7 @@
     <div data-controller="day-selector" class="mt-10">
       <div data-day-selector-target="toggle"  class="md:hidden py-1 flex max-w-40 mx-auto text-sm rounded-lg justify-around items-center my-4">
           <% days.each_with_index do |day, index| %>
-            <% default_klass = index == 0 ? "bg-rose-100 border-2 border-rose-800" : "" %>
+            <% default_klass = index == 0 ? "border-2 border-rose-800" : "" %>
 
             <div data-action="click->day-selector#selectDay" data-index="<%= index %>" class="px-3 py-1 rounded-lg cursor-pointer text-rose-800 font-bold <%= default_klass %>">
               Day <%= index + 1 %>
