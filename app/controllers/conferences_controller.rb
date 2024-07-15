@@ -1,5 +1,5 @@
 class ConferencesController < ApplicationController
-  before_action :validate_admin, only: [:schedule]
+  # before_action :validate_admin, only: [:schedule]
 
   def show
     @conference = current_conference
