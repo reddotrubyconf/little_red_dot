@@ -18,7 +18,7 @@ export default class extends Controller {
     const bio = this.bioValue || "No talk summary available";
     Swal.fire({
       title: this.nameValue,
-      html: `<p class="text-sm">${this.titleValue}</p> <br>`,
+      html: `<p class="text-lg">${this.titleValue}</p> <br>`,
       imageUrl: this.imageUrlValue,
       imageHeight: 120,
       confirmButtonText: 'awesome',

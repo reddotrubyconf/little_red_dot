@@ -9,6 +9,27 @@
     
     "#{hours}:#{minutes} #{period}"
   end
+
+  def speaker_profiles
+    {
+     'Yukihiro "Matz" Matsumoto' => ["Ruby", "https://github.com/matz.png"],
+     'Cristian Planas' => ["Zendesk", "https://pbs.twimg.com/profile_images/1612162777635856389/Y7ed0sKY_400x400.jpg"],
+     'Hiroshi Shibata' => ["ANDPAD", "https://avatars.githubusercontent.com/u/12301?v=4"],
+     'Eriko Sugiyama' => ["MoneyForward", "https://avatars.githubusercontent.com/u/40660382?v=4"],
+     'Marco Roth' => ["Toolsday", "https://github.com/marcoroth.png"],
+     'Adrian Goh' => ["NodeFlair", "https://github.com/adriangohjw.png"],
+     'Hieu Nguyen' => ["Ascenda", "https://github.com/hieuk09.png"],
+     'Tim Riley' => ["Buildkite", "https://pbs.twimg.com/media/GJl6jJ9XgAAdUB1?format=jpg&name=medium"],
+     'Charles Oliver Nutter' => ["Red Hat", "https://github.com/headius.png"],
+     'Mu-Fan Teng' => ["5xRuby", "https://pbs.twimg.com/profile_images/1792112104247635968/12VEt0pt_400x400.jpg"],
+     'Giovanni Sakti' => ["RelayCommerce", "https://media.licdn.com/dms/image/C5603AQFTYvUASDPScw/profile-displayphoto-shrink_800_800/0/1640562146338?e=1724284800&v=beta&t=i0zHCcJF0H0G87pRqcwKp2FqV2M4Yxba3xBYJ6LUhkI"],
+     'Mario Arias' => ["Carbon Management Solutions", "https://media.licdn.com/dms/image/D5603AQHqCWi-9iYu5A/profile-displayphoto-shrink_400_400/0/1677910795703?e=1724284800&v=beta&t=Z8CHRukmbX1jK9DnOOgipb0uuPrlzns3itn8f1_21Rs"],
+     'Colby Swandale' => ["RubyCentral", "https://github.com/colby-swandale.png"],
+     'Dave Aronson' => ["Codosaurus", "https://www.codosaur.us/assets/img/2020-02-07-Speaking-at-JSConfHI-HEAD-N-SHOULDERS-SMALL.jpg"],
+     'Aaron Patterson' => ["Rails Core, Shopify", "https://avatars.githubusercontent.com/u/3124?v=4"],
+     'Okura Musafami' => ["Freelancer", "https://github.com/okuramasafumi.png"]
+    }
+  end
 %>
 
   <% if days.present? %>
@@ -34,12 +55,20 @@
                   <% day.each do |event| %>
                     <tr>
                       <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 w-1/6"><%= convert_time(event["time"]) %></td>
-                      <td class="px-6 py-4 text-sm text-gray-800 w-5/6">
-                        <%= event["name"] %>
-                        <br/>
-                        <small>
-                          <%= event["description"] %>
-                        </small>
+                      <td class="px-6 py-4 text-lg font-semibold text-gray-800 w-5/6">
+                        <%= event["name"] %> <br>
+                        <% if speaker_profiles[event["description"]].present? %>
+                          <div class="flex gap-2 items-center my-2 text-sm" 
+                            data-action="click->speaker-dialog#showDialog"
+                            data-controller="speaker-dialog"
+                            data-speaker-dialog-name-value="<%= event["description"] %>"
+                            data-speaker-dialog-title-value="<%= speaker_profiles.dig(event["description"], 0) %>"
+                            data-speaker-dialog-image-url-value="<%= speaker_profiles.dig(event["description"], 1) %>"
+                          >
+                            <img class="cursor-pointer h-10 w-10 rounded-full inline" src="<%= speaker_profiles.dig(event["description"],1) %>">
+                            <div class="cursor-pointer text-rose-600 underline decoration-dotted"><%= event["description"] %></span>
+                          </div>
+                        <% end %>
                       </td>
                     </tr>
                   <% end %>
