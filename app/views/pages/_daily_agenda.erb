@@ -31,52 +31,47 @@
     }
   end
 %>
-
-  <% if days.present? %>
-    <div data-controller="day-selector" class="mt-10">
-      <div data-day-selector-target="toggle"  class="md:hidden py-1 flex max-w-40 mx-auto text-sm rounded-lg justify-around items-center my-4">
-          <% days.each_with_index do |day, index| %>
-            <% default_klass = index == 0 ? "border-2 border-rose-800" : "" %>
-
-            <div data-action="click->day-selector#selectDay" data-index="<%= index %>" class="px-3 py-1 rounded-lg cursor-pointer text-rose-800 font-bold <%= default_klass %>">
-              Day <%= index + 1 %>
-            </div>
-          <% end %>
-      </div>
-      <div data-day-selector-target="content" class="flex gap-4 md:flex-row flex-col">
-        <% days.each_with_index do |day, index| %>
-          <% default_klass = index == 0 ? "" : "hidden" %>
-
-          <div data-index="<%= index %>" class="md:block flex-grow p-4 rounded-lg border-4 border-rose-800 bg-white <%= default_klass %>">
-            <div class="w-full h-full">
-              <h3 class="px-6 py-3 text-center text-lg font-bold text-rose-800">Day <%= index + 1 %></h3>
-              <table class="min-w-full divide-y divide-gray-200">
-                <tbody class="divide-y divide-gray-200">
-                  <% day.each do |event| %>
-                    <tr>
-                      <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 w-1/6"><%= convert_time(event["time"]) %></td>
-                      <td class="px-6 py-4 text-lg font-semibold text-gray-800 w-5/6">
-                        <%= event["name"] %> <br>
+<% if days.present? %>
+  <div data-controller="day-selector" class="mt-10">
+    <div data-day-selector-target="toggle"  class="flex items-center justify-around py-1 mx-auto my-4 text-sm rounded-lg md:hidden max-w-40">
+      <% days.each_with_index do |day, index| %>
+        <% default_klass = index == 0 ? "border-2 border-rose-800" : "" %>
+        <div data-action="click->day-selector#selectDay" data-index="<%= index %>" class="px-3 py-1 rounded-lg cursor-pointer text-rose-800 font-bold <%= default_klass %>">
+          Day <%= index + 1 %>
+        </div>
+      <% end %>
+    </div>
+    <div data-day-selector-target="content" class="flex flex-col gap-4 md:flex-row">
+      <% days.each_with_index do |day, index| %>
+        <% default_klass = index == 0 ? "" : "hidden" %>
+        <div data-index="<%= index %>" class="md:block flex-grow p-4 rounded-lg border-4 border-rose-800 bg-white <%= default_klass %>">
+          <div class="w-full h-full">
+            <h3 class="px-6 py-3 text-lg font-bold text-center text-rose-800">Day <%= index + 1 %></h3>
+            <table class="min-w-full divide-y divide-gray-200">
+              <tbody class="divide-y divide-gray-200">
+                <% day.each do |event| %>
+                  <tr>
+                    <td class="w-1/6 px-2 py-4 font-medium text-gray-800 align-top whitespace-nowrap"><%= convert_time(event["time"]) %></td>
+                    <td class="w-5/6 px-6 py-4 font-semibold text-gray-800 align-top">
+                      <div class="flex items-center justify-between gap-x-5">
+                        <div>
+                          <h4><%= event["name"] %></h4>
+                          <p class="text-md text-rose-800"><%= event["description"] %></p>
+                        </div>
                         <% if speaker_profiles[event["description"]].present? %>
-                          <div class="flex gap-2 items-center my-2 text-sm" 
-                            data-action="click->speaker-dialog#showDialog"
-                            data-controller="speaker-dialog"
-                            data-speaker-dialog-name-value="<%= event["description"] %>"
-                            data-speaker-dialog-title-value="<%= speaker_profiles.dig(event["description"], 0) %>"
-                            data-speaker-dialog-image-url-value="<%= speaker_profiles.dig(event["description"], 1) %>"
-                          >
-                            <img class="cursor-pointer h-10 w-10 rounded-full inline" src="<%= speaker_profiles.dig(event["description"],1) %>">
-                            <div class="cursor-pointer text-rose-600 underline decoration-dotted"><%= event["description"] %></span>
+                          <div class="shrink-0">
+                            <img class="inline w-12 h-12 rounded-full" src="<%= speaker_profiles.dig(event["description"],1) %>">
                           </div>
                         <% end %>
-                      </td>
-                    </tr>
-                  <% end %>
-                </tbody>
-              </table>
-            </div>
+                      </div>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
+<% end %>
