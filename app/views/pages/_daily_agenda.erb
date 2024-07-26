@@ -1,4 +1,4 @@
-<% 
+<%
   def convert_time(timestamp)
     timestamp = timestamp.to_s.rjust(4, '0')
     hours = timestamp[0..1].to_i
@@ -6,7 +6,7 @@
     period = hours >= 12 ? 'PM' : 'AM'
     hours = hours % 12
     hours = 12 if hours == 0
-    
+
     "#{hours}:#{minutes} #{period}"
   end
 
@@ -35,7 +35,7 @@
   <div data-controller="day-selector" class="mt-10">
     <div data-day-selector-target="toggle"  class="flex items-center justify-around py-1 mx-auto my-4 text-sm rounded-lg md:hidden max-w-40">
       <% days.each_with_index do |day, index| %>
-        <% default_klass = index == 0 ? "border-2 border-rose-800" : "" %>
+        <% default_klass = index == 1 ? "border-2 border-rose-800" : "" %>
         <div data-action="click->day-selector#selectDay" data-index="<%= index %>" class="px-3 py-1 rounded-lg cursor-pointer text-rose-800 font-bold <%= default_klass %>">
           Day <%= index + 1 %>
         </div>
@@ -43,7 +43,7 @@
     </div>
     <div data-day-selector-target="content" class="flex flex-col gap-4 md:flex-row">
       <% days.each_with_index do |day, index| %>
-        <% default_klass = index == 0 ? "" : "hidden" %>
+        <% default_klass = index == 1 ? "" : "hidden" %>
         <div data-index="<%= index %>" class="md:block flex-grow p-4 rounded-lg border-4 border-rose-800 bg-white <%= default_klass %>">
           <div class="w-full h-full">
             <h3 class="px-6 py-3 text-lg font-bold text-center text-rose-800">Day <%= index + 1 %></h3>
