@@ -41,4 +41,6 @@ Rails.application.routes.draw do
       patch :schedule
     end
   end
+
+  get '/survey', to: redirect('https://forms.gle/Pv4Cn4xQUocHDmvRA')
 end
